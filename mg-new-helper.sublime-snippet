@@ -1,0 +1,44 @@
+<snippet>
+	<content><![CDATA[
+namespace ${1:${TM_FILEPATH/(?:.*vendor\/)|(\/)?([^\/]+)(?=\/)|(?:\/[^\/]+\.php$)/(?1:\\$^N:$^N)/g}};
+
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
+use Magento\Store\Model\ScopeInterface;
+
+/**
+ * ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}} class
+ */
+class ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}} extends AbstractHelper
+{
+    /**
+     * ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}} constructor
+     *
+     * @param Context $context
+     */
+    public function __construct(
+        Context \$context
+    ) {
+        parent::__construct(\$context);
+    }
+
+    /**
+     * get admin config
+     *
+     * @param  string \$path
+     * @param  string \$scope
+     * @param  string \$scopeId
+     * @return string|null
+     */
+    public function getConfig(\$path, \$scope = ScopeInterface::SCOPE_STORE, \$scopeId = null)
+    {
+        return \$this->scopeConfig->getValue(\$path, \$scope, \$scopeId);
+    }
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mg-helper</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

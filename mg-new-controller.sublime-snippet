@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+
+namespace ${1:${TM_FILEPATH/(?:.*vendor\/)|(\/)?([^\/]+)(?=\/)|(?:\/[^\/]+\.php$)/(?1:\\$^N:$^N)/g}};
+
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
+
+/**
+ * ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}}
+ */
+class ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}} extends Action
+{
+    /**
+     * @var PageFactory
+     */
+    protected \$_resultPageFactory;
+
+    /**
+     * ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}} constructor
+     *
+     * @param Context     $context
+     * @param PageFactory $resultPageFactory
+     */
+    public function __construct(
+        Context \$context,
+        PageFactory \$resultPageFactory
+    ) {
+        \$this->_resultPageFactory = \$resultPageFactory;
+        parent::__construct(\$context);
+    }
+
+    /**
+     * ${3:description}
+     * 
+     * @return \Magento\Framework\View\Result\Page
+     */
+    public function execute() {
+        ${4:\$resultPage = \$this->_resultPageFactory->create();
+        \$resultPage->getConfig()->getTitle()->set(__('${5:PageTitle}'));}
+
+        return \$resultPage;
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mg-cont</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>

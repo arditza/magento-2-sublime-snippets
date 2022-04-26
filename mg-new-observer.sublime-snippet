@@ -1,0 +1,32 @@
+<snippet>
+    <content><![CDATA[
+
+namespace ${1:${TM_FILEPATH/(?:.*vendor\/)|(\/)?([^\/]+)(?=\/)|(?:\/[^\/]+\.php$)/(?1:\\$^N:$^N)/g}};
+
+use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Event\Observer;
+
+/**
+ * ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}}
+ */
+class ${2:${TM_FILENAME/(.+)\..+|.*/$1/:name}} implements ObserverInterface
+{
+    /**
+     * ${3:method description}
+     * 
+     * @param  Observer $observer
+     * @return this
+     */
+    public function execute(Observer \$observer) {
+        /** @var \Magento\Catalog\Model\Product \$product */
+        \$product = \$observer->getEvent()->getDataByKey('product');
+
+        return \$this;
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-ob</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+</snippet>

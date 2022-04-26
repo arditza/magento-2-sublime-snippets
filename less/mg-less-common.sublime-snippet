@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .page-wrapper {
+        ${1:}
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-less-common</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.less</scope>
+</snippet>

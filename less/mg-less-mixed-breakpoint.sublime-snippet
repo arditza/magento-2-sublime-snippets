@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+
+//
+//  Tablet
+//  _____________________________________________
+
+& when (@media-target = '${1:desktop}'), (@media-target = 'all') {
+    @media only screen and (min-width: ${2:@screen__m}) and (max-width: ${3:(@screen__xl - 1)}) {
+        .page-wrapper {
+
+        }
+    }
+}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-less-break-mix</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.less</scope>
+</snippet>

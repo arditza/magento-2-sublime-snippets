@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="${1:catalog_product_save_after}">
+        ${2:<observer name="process_url_rewrite_saving" disabled="true"/>}
+        <observer name="${3:custom_process_url_rewrite_saving}" instance="${4:Custom\Catalog\Observer\ProductProcessUrlRewriteSavingObserver}"/>
+    </event>
+</config>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mg-event</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

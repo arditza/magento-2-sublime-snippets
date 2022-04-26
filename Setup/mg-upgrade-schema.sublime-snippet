@@ -1,0 +1,32 @@
+<snippet>
+    <content><![CDATA[
+
+namespace ${1:${TM_FILEPATH/(?:.*vendor\/)|(\/)?([^\/]+)(?=\/)|(?:\/[^\/]+\.php$)/(?1:\\$^N:$^N)/g}};
+
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\Setup\UpgradeSchemaInterface;
+
+class UpgradeSchema implements UpgradeSchemaInterface
+{
+
+    /**
+     * {@inheritdoc}
+     */
+    public function upgrade(SchemaSetupInterface \$setup, ModuleContextInterface \$context)
+    {
+        \$setup->startSetup();
+
+        if (version_compare(\$context->getVersion(), '1.1.0', '<')) {
+            \$this->doSomething(\$setup);
+        }
+
+        \$setup->endSetup();
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-upgrade-schema</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+</snippet>
