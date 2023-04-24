@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+    <referenceBlock name="${1:block.name}" ${2:remove="true"} ${3:display="true"}>
+        ${4:<action method="setTemplate">
+            <argument name="template" xsi:type="string">Vendor_ExtensionName::path-to-template/template.phtml</argument>
+        </action>}
+        ${5:<arguments>
+            <argument name="view_model" xsi:type="object">Vendor\ExtensionName\ViewModel\ConfigProvider</argument>
+        </arguments>}
+    </referenceBlock>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-reference-block</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.xml</scope>
+</snippet>

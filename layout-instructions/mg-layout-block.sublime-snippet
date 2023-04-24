@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[
+<block class="${1:Vendor\ExtensionName\Block\Widget\MasterData}"
+        name="${2:block.name}"
+        ${3:as="alias"}
+        template="${4:Vendor_ExtensionName::path-to-template/template.phtml}"
+        ${5:ifconfig="config_path/group/field"}
+        ${6:before="category.products"}
+        ${7:after="sibling.block"}>
+    ${8:<arguments>
+        <argument name="view_model" xsi:type="object">Vendor\ExtensionName\ViewModel\ConfigProvider</argument>
+    </arguments>}
+</block>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-layout-block</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.xml</scope>
+</snippet>

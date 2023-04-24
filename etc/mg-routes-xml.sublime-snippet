@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="${1:standard}">
+        <route id="${2:route}" frontName="${2:route}">
+            <module name="${3:Vendor_Extension}" />
+        </route>
+    </router>
+</config>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>mg-route</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.xml</scope>
+</snippet>

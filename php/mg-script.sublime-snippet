@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 \$state = \$objectManager->get('Magento\Framework\App\State');
 \$state->setAreaCode('frontend');
 
-\$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+//\$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 \$product = \$objectManager->get('Magento\Catalog\Model\Product');
 
 ]]></content>
